@@ -52,6 +52,8 @@ public class Date {
 		return month + " " + day + ", " + year + "\n";
 	}
 	
+	//Complete the following methods so that we can pass the correct one in the database. This might require some brainstorming or research.
+	
 	public void responseDate() {
 		
 	}
@@ -61,6 +63,10 @@ public class Date {
 	}
 	
 	public void paymentDueDate() {
+		
+	}
+	
+	public void pDDATE() {
 		
 	}
 }

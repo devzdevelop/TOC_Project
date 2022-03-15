@@ -25,6 +25,9 @@ public class Technicians {
 		this.lastName = " ";
 	}
 	
+	//Link the foreign keys with the database once all the tables are created.
+	//Test all the method and make sure they work with the database correctly (The database was sent in the group).
+	//Any changes you make in one method may require you to make changes to the other methods and in the database.
 	
 	
 	public Technicians(String tID, String cOMID, String cID, String firstName, String lastName) {
