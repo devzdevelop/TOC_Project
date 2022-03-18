@@ -26,7 +26,7 @@ public class Technicians {
 	}
 	
 	//Link the foreign keys with the database once all the tables are created.
-	//Test all the method and make sure they work with the database correctly (The database was sent in the group).
+	//Test all the methods and make sure they work with the database correctly (The database was sent in the group).
 	//Any changes you make in one method may require you to make changes to the other methods and in the database.
 	
 	
@@ -145,12 +145,12 @@ public class Technicians {
 			ResultSet rs = prest.executeQuery();
 			 
 			while(rs.next()) {
-//				String id = rs.getString("tID");
-//				String name = rs.getString("comID");
-//				String name = rs.getString("cID");
-//				String name = rs.getString("firstName");
-//				String name = rs.getString("lastName");
-//				System.out.println("Technician ID: " + tId + " | " + "Complaint ID: " + comID + " | " + " Customer's ID: " + cID + " | " + "Technician's First and Last Name" + firstName + " "  + lastName);
+				String tID = rs.getString("tID");
+				String comID = rs.getString("comID");
+				String cID = rs.getString("cID");
+				String firstName = rs.getString("firstName");
+				String lastName = rs.getString("lastName");
+				System.out.println("Technician ID: " + tID + " | " + "Complaint ID: " + comID + " | " + " Customer's ID: " + cID + " | " + "Technician's First and Last Name: " + firstName + " "  + lastName);
 			}
 			
 		}catch (Exception e) {
@@ -158,15 +158,15 @@ public class Technicians {
 		}
 	}
 	
-	public void update(String id, String name) {
+	public void updateFirstName(String tID, String name) {
 		String sql = "UPDATE Technicians SET firstName = ? WHERE TID = ?";
 		PreparedStatement prest;
 		
 		
 		try {
 			prest = myconn.prepareStatement(sql);
-//			prest.setString(1, firstName);
-//			prest.setString(2, tId);
+			prest.setString(1, firstName);
+			prest.setString(2, tID);
 			System.out.println(prest);
 			
 			prest.executeUpdate();

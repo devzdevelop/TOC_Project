@@ -3,6 +3,7 @@ package main;
 import modules.Date;
 import modules.Accounts;
 import modules.Complaints;
+import modules.CustomerServiceReps;
 import modules.Technicians;
 
 public class Driver {
@@ -11,6 +12,8 @@ public class Driver {
 		//You might have to make adjustments (if you made changes to the technicians class) to the argument passed in the method create the technicians class. Bellow is just test data to test if the method works.
 		Technicians technicians = new Technicians();
 		//technicians.create("123", "456", "789", "Test", "Ing");
+		technicians.readAll();
+		technicians.updateFirstName("123", null);
 		
 		Complaints complaints = new Complaints();
 		//You might have to make adjustments (if you made changes to the complaints class) to the argument passed in the method create the complaints class. Bellow is just test data to test if the method works.
@@ -24,7 +27,7 @@ public class Driver {
 		//customers.create();
 		
 		//CustomerServiceReps customerServiceReps = new CustomerServiceReps();
-		//customerServiceReps.create();
+		//customerServiceReps.create("123", "456", "Sarah", "Lue");
 	}
 
 }
