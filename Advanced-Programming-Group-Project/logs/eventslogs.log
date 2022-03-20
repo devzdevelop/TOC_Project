@@ -1,0 +1,8 @@
+[TRACE] 2022-03-19 08:17:42.160 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-19 08:17:43.677 [main] Technicians - readAll method was run
+[INFO ] 2022-03-19 08:17:43.688 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-19 08:17:43.693 [main] Technicians - All records were shown
+[TRACE] 2022-03-19 10:10:38.296 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-19 10:10:39.778 [main] Technicians - readAll method was run
+[INFO ] 2022-03-19 10:10:39.788 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-19 10:10:39.793 [main] Technicians - All records were shown

@@ -1,8 +1,6 @@
 package modules;
 
 public class Date {
-	private static final long serialVersionUID = 1L;
-	
 	private int day;
 	private String month;
 	private int year;

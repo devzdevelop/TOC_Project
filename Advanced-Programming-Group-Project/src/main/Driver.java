@@ -12,8 +12,13 @@ public class Driver {
 		//You might have to make adjustments (if you made changes to the technicians class) to the argument passed in the method create the technicians class. Bellow is just test data to test if the method works.
 		Technicians technicians = new Technicians();
 		//technicians.create("123", "456", "789", "Test", "Ing");
+		//technicians.readAll();
+		//technicians.create("1234", "735", "589", "Caty", "Luis");
+		//technicians.create("1237", "635", "689", "James", "Bond");
+		//technicians.update("123", "Johnson", "FirstName");
+		//technicians.update("123", "Sing", "LastName");
+		//technicians.delete("123");
 		technicians.readAll();
-		technicians.updateFirstName("123", null);
 		
 		Complaints complaints = new Complaints();
 		//You might have to make adjustments (if you made changes to the complaints class) to the argument passed in the method create the complaints class. Bellow is just test data to test if the method works.

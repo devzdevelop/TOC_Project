@@ -7,5 +7,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Server Setup/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar"/>
+	<classpathentry kind="lib" path="C:/Logging Setup/apache-log4j-2.13.3-bin/log4j-api-2.13.3.jar"/>
+	<classpathentry kind="lib" path="C:/Logging Setup/apache-log4j-2.13.3-bin/log4j-core-2.13.3.jar"/>
+	<classpathentry kind="lib" path="properties"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -16,9 +16,8 @@ public class DBConnectorFactory {
 	
 	public static Connection getDatabaseConnection(){
 		String url = "jdbc:mysql://localhost:3306/mscv";
+		
 		try {
-			
-			
 			if(myConn != null) {
 				return myConn;
 			}else if(myConn == null){
@@ -33,7 +32,6 @@ public class DBConnectorFactory {
 	}
 	
 	public static void main(String[] arg) {
-		DBConnectorFactory con = new DBConnectorFactory();
-		con.myConn = con.getDatabaseConnection();
+		DBConnectorFactory.myConn = DBConnectorFactory.getDatabaseConnection();
 	}
 }
