@@ -6,3 +6,190 @@
 [INFO ] 2022-03-19 10:10:39.778 [main] Technicians - readAll method was run
 [INFO ] 2022-03-19 10:10:39.788 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
 [INFO ] 2022-03-19 10:10:39.793 [main] Technicians - All records were shown
+[TRACE] 2022-03-25 18:21:04.701 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-25 18:21:06.497 [main] Technicians - readAll method was run
+[INFO ] 2022-03-25 18:21:06.518 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-25 18:21:06.555 [main] Technicians - All records were shown
+[TRACE] 2022-03-25 18:21:06.558 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "javax.swing.JTable.getModel()" because "this.table" is null
+[TRACE] 2022-03-25 18:22:20.795 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-25 18:22:22.193 [main] Technicians - readAll method was run
+[INFO ] 2022-03-25 18:22:22.209 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-25 18:22:22.216 [main] Technicians - All records were shown
+[TRACE] 2022-03-25 18:28:14.379 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-25 18:28:15.784 [main] Technicians - readAll method was run
+[INFO ] 2022-03-25 18:28:15.802 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-25 18:28:15.813 [main] Technicians - All records were shown
+[TRACE] 2022-03-25 18:28:33.458 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-25 18:28:34.935 [main] Technicians - readAll method was run
+[INFO ] 2022-03-25 18:28:34.951 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-25 18:28:34.963 [main] Technicians - All records were shown
+[TRACE] 2022-03-25 18:30:27.492 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-25 18:30:29.145 [main] Technicians - readAll method was run
+[INFO ] 2022-03-25 18:30:29.166 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-25 18:30:29.179 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:03:49.409 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:03:49.538 [main] Technicians - readAll method was run
+[TRACE] 2022-03-26 08:03:49.539 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.myconn" is null
+[TRACE] 2022-03-26 08:08:55.539 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:08:55.662 [main] Technicians - readAll method was run
+[TRACE] 2022-03-26 08:08:55.663 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.myconn" is null
+[TRACE] 2022-03-26 08:09:19.512 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:09:21.172 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:09:21.196 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:09:21.242 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:10:20.827 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:10:22.285 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:10:22.305 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:10:22.316 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:11:18.047 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:11:19.809 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:11:19.827 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:11:19.840 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:29:32.782 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:29:34.332 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:29:34.354 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:29:34.362 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:29:34.365 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "javax.swing.JTable.getModel()" because "this.table" is null
+[TRACE] 2022-03-26 08:41:54.713 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:41:56.046 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:41:56.067 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:41:56.080 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:41:56.081 [main] Technicians - Error: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+[TRACE] 2022-03-26 08:42:44.065 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:42:45.556 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:42:45.576 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:42:45.590 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:42:45.590 [main] Technicians - Error: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+[TRACE] 2022-03-26 08:42:58.097 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:43:00.462 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:43:00.486 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:43:00.498 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:43:00.499 [main] Technicians - Error: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+[TRACE] 2022-03-26 08:43:58.192 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:43:59.785 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:43:59.805 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:43:59.816 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 08:43:59.818 [main] Technicians - Error: java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+[TRACE] 2022-03-26 08:44:53.102 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 08:44:54.483 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 08:44:54.504 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 08:44:54.515 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:16:41.829 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:16:43.259 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:16:43.280 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:16:43.290 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:16:43.291 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:16:43.291 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:13.290 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:18:17.001 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:18:17.014 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:18:17.021 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:18:17.021 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:17.022 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:33.363 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:18:34.992 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:18:35.008 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:18:35.014 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:18:35.015 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:35.015 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:52.750 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:18:54.251 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:18:54.269 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:18:54.276 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:18:54.276 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:18:54.277 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:19:57.811 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:19:59.511 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:19:59.526 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:19:59.532 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:19:59.532 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:19:59.532 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:22:00.022 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:22:01.463 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:22:01.479 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:22:01.485 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:22:01.485 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:22:01.485 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:27:08.235 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:27:09.785 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:27:09.800 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:27:09.807 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:27:09.807 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:27:09.807 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:27:51.326 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:27:52.793 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:27:52.808 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:27:52.814 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:27:52.815 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:27:52.815 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:32:26.887 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:32:27.962 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:32:27.976 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:32:27.983 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:32:27.984 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:32:27.984 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:33:33.905 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:33:35.577 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:33:35.593 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:33:35.598 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:33:35.599 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:33:35.599 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:33:35.612 [main] Technicians - Error: java.lang.IllegalArgumentException: Identifier not found
+[TRACE] 2022-03-26 09:34:23.655 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:34:25.015 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:34:25.033 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:34:25.039 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:34:25.040 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:34:25.040 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:34:25.053 [main] Technicians - Error: java.lang.IllegalArgumentException: Identifier not found
+[TRACE] 2022-03-26 09:34:41.819 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:34:43.679 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:34:43.693 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:34:43.699 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:34:43.700 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:34:43.700 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 09:50:09.602 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:50:11.063 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:50:11.079 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:50:11.088 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:50:11.092 [main] Technicians - Error: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+[TRACE] 2022-03-26 09:50:54.729 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:50:55.967 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:50:55.979 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:50:55.984 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:50:55.989 [main] Technicians - Error: java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+[TRACE] 2022-03-26 09:52:20.105 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:52:21.418 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:52:21.435 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:52:21.442 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:52:21.446 [main] Technicians - Error: java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+[TRACE] 2022-03-26 09:55:04.060 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:55:05.778 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:55:05.790 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:55:05.797 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:55:05.800 [main] Technicians - Error: java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+[TRACE] 2022-03-26 09:57:45.326 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:57:46.985 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:57:46.998 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:57:47.003 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:57:47.008 [main] Technicians - Error: java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+[TRACE] 2022-03-26 09:59:16.571 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 09:59:18.169 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 09:59:18.192 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 09:59:18.200 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 09:59:18.205 [main] Technicians - Error: java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+[TRACE] 2022-03-26 10:09:22.282 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 10:09:24.132 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 10:09:24.151 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 10:09:24.159 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 10:25:26.528 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 10:25:28.662 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 10:25:28.678 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 10:25:28.685 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 10:47:39.419 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 10:47:39.493 [main] Technicians - readAll method was run
+[TRACE] 2022-03-26 10:47:39.494 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.myconn" is null
+[TRACE] 2022-03-26 10:47:53.529 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 10:47:54.807 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 10:47:54.818 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 10:47:54.837 [main] Technicians - All records were shown

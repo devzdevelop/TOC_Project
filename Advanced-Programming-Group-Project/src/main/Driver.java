@@ -18,14 +18,15 @@ public class Driver {
 		//technicians.update("123", "Johnson", "FirstName");
 		//technicians.update("123", "Sing", "LastName");
 		//technicians.delete("123");
+		//technicians.readAll();
 		technicians.readAll();
 		
-		Complaints complaints = new Complaints();
+		//Complaints complaints = new Complaints();
 		//You might have to make adjustments (if you made changes to the complaints class) to the argument passed in the method create the complaints class. Bellow is just test data to test if the method works.
 	//	complaints.create("123", "456", "789", "101112", "C", "I", new Date(13, "January", 2022), "ST", new Date(13, "September", 2022), "CS");
 		
 		//You might have to make adjustments (if you made changes to the accounts class) to the argument passed in the method create the accounts class. Bellow is just test data to test if the method works.
-		Accounts accounts = new Accounts();
+		//Accounts accounts = new Accounts();
 		//accounts.create(123, "PS", 0, new Date(13, "January", 2022));
 		
 		//Customers customers = new Customers();

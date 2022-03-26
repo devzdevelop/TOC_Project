@@ -1,8 +1,19 @@
 package modules;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +29,6 @@ public class Technicians {
 	private String CID; //Foreign Key
 	private String firstName; //
 	private String lastName;
-	
 	private Connection myconn;
 	
 	public Technicians() {
@@ -141,7 +151,44 @@ public class Technicians {
 		} 
 	}
 	
+//	public void properties() {
+//		// Creating Window using JFrame
+//				JFrame frame = new JFrame();
+//				frame.setTitle("Tech Table");
+//				frame.setSize(800, 500);
+//
+//				// Adding Table View
+//				frame.add(getTablePanel());
+//
+//				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//				frame.setVisible(true);
+//	}
+	
+//	private JPanel getTablePanel() {
+//
+//		JPanel tableJPanel = new JPanel();
+//		
+//		tableJPanel.setLayout(new BorderLayout());
+//		
+//		// Column Header
+//		String[] columns = {"tID", "comID", "cID", "firstName", "lastName"};
+//
+//		// Getting Data for Table from Database
+//		//Object[][] data = readAll();
+//
+//		// Creating JTable object passing data and header
+//		JTable employeeTable = new JTable(data, columns);
+//		
+//		
+//		tableJPanel.add(employeeTable.getTableHeader(), BorderLayout.NORTH);
+//		tableJPanel.add(employeeTable, BorderLayout.CENTER);
+//		
+//		return tableJPanel;
+//		}
+
+	
 	public void readAll() {
+
 		logger.info("readAll method was run");
 		String sql = "SELECT * FROM Technicians";
 		PreparedStatement prest;
@@ -154,6 +201,9 @@ public class Technicians {
 			ResultSet rs = prest.executeQuery();
 			logger.info("All records were shown");
 			
+			String[] columns = {"tID", "comID", "cID", "firstName", "lastName"};
+			
+			
 			while(rs.next()) {
 				String tID = rs.getString("tID");
 				String comID = rs.getString("comID");
@@ -161,14 +211,15 @@ public class Technicians {
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
 				System.out.println("Technician ID: " + tID + " | " + "Complaint ID: " + comID + " | " + " Customer's ID: " + cID + " | " + "Technician's First and Last Name: " + firstName + " "  + lastName);
+				
 			}
-			
-			
+		
 		}catch (Exception e) {
 			System.out.println(e);
 			logger.trace("Error: " + e);
 		}
 	}
+	
 	
 	public void update(String tID, String input, String select) {
 		logger.trace("update method was run");
