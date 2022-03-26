@@ -1,55 +1,54 @@
 package domain;
 
+import java.util.ArrayList;
+
 public class State {
 	//Attributes
 	private String key;
 	private String value;
-	//private State nextState;
+	private ArrayList<String> nextStateKeyList = new ArrayList<>();
 
 	//Constructors
 	public State() {
 		this.key = "?";
 		this.value = "?";
+		this.nextStateKeyList = null;
 	}	
 	
-	public State(String key, String value) {
+	public State(String key, String value, ArrayList<String> nextStateKeyList) {
 		this.key = key;
 		this.value = value;
+		this.nextStateKeyList = nextStateKeyList;
 	}
 
 	//Getters and Setters
-	/**
-	 * @return the key
-	 */
 	public String getKey() {
 		return key;
 	}
 
-	/**
-	 * @param key the key to set
-	 */
 	public void setKey(String key) {
 		this.key = key;
 	}
 
-	/**
-	 * @return the value
-	 */
 	public String getValue() {
 		return value;
 	}
 
-	/**
-	 * @param value the value to set
-	 */
 	public void setValue(String value) {
 		this.value = value;
 	}
 
-	//ToString
+	public ArrayList<String> getNextStateList() {
+		return nextStateKeyList;
+	}
+
+	public void setNextStateList(ArrayList<String> nextStateList) {
+		this.nextStateKeyList = nextStateList;
+	}
+
 	@Override
 	public String toString() {
-		return "State [key=" + key + ", value=" + value + "]";
+		return "State [key=" + key + ", value=" + value + ", nextStateKeyList=" + nextStateKeyList + "]";
 	}
 	
 	
