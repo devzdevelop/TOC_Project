@@ -6,50 +6,54 @@ import java.awt.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 import factories.DBConnectorFactory;
 
 
-
-public class Technicians {
+public class Technicians extends JFrame {
 	private static final Logger logger = LogManager.getLogger(Technicians.class);
 	private String TID; // Primary Key 
-	private String COMID; // Foreign Key
-	private String CID; //Foreign Key
 	private String firstName; //
 	private String lastName;
+	private String password;
+	
 	private Connection myconn;
+	
+	private JPanel contentPane;
+	private JTable table;
+	
 	
 	public Technicians() {
 		logger.trace("Entered Technician Class");
 		myconn = DBConnectorFactory.getDatabaseConnection();
 		this.TID = " "; 
-		this.COMID = " "; 
-		this.CID = " ";
 		this.firstName = " ";
 		this.lastName = " ";
+		this.password = " ";
 	}
 	
 	
-	public Technicians(String tID, String cOMID, String cID, String firstName, String lastName) {
+	public Technicians(String tID, String firstName, String lastName, String passowrd) {
 		super();
 		logger.trace("Entered Technician Class");
 		TID = tID;
-		COMID = cOMID;
-		CID = cID;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.password = passowrd;
 	}
 
 
@@ -63,32 +67,8 @@ public class Technicians {
 	public void setTID(String tID) {
 		TID = tID;
 	}
-
-
-
-	public String getCOMID() {
-		return COMID;
-	}
-
-
-
-	public void setCOMID(String cOMID) {
-		COMID = cOMID;
-	}
-
-
-
-	public String getCID() {
-		return CID;
-	}
-
-
-
-	public void setCID(String cID) {
-		CID = cID;
-	}
-
-
+	
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -112,6 +92,14 @@ public class Technicians {
 		this.lastName = lastName;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 
 	public Connection getMyconn() {
@@ -126,24 +114,23 @@ public class Technicians {
 
 
 
-	public void create(String TID, String COMID, String CID, String firstName, String lastName) {
+	public void create(String TID, String firstName, String lastName, String password) {
 		logger.trace("Create method was run");
-		String sql = "INSERT INTO Technicians (TID, COMID, CID, FirstName, LastName) VALUES (?, ?, ? ,?, ?)";
+		String sql = "INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES (? ,? , ?, ?)";
 		PreparedStatement prest;
 		System.out.println(myconn);
 		try {
 			prest = myconn.prepareStatement(sql);
 			prest.setString(1, TID); //# the position where the question marks are
-			prest.setString(2, COMID);
-			prest.setString(3, CID);
-			prest.setString(4, firstName);
-			prest.setString(5, lastName);
+			prest.setString(2, firstName);
+			prest.setString(3, lastName);
+			prest.setString(4, password);
 			
 			logger.info(prest);
 			System.out.println(prest);
 			
 			prest.executeUpdate();
-			logger.info("A record with these information was created:  \n"+ "TID: " + TID + "| COMID: " + COMID + "| CID: " + CID + "| First Name: " + firstName + "| Last Name" + lastName);
+			logger.info("A record with these information was created:  \n"+ "TID: " + TID + "| First Name: " + firstName + "| Last Name" + lastName + "Password: " + password);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -151,41 +138,6 @@ public class Technicians {
 		} 
 	}
 	
-//	public void properties() {
-//		// Creating Window using JFrame
-//				JFrame frame = new JFrame();
-//				frame.setTitle("Tech Table");
-//				frame.setSize(800, 500);
-//
-//				// Adding Table View
-//				frame.add(getTablePanel());
-//
-//				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//				frame.setVisible(true);
-//	}
-	
-//	private JPanel getTablePanel() {
-//
-//		JPanel tableJPanel = new JPanel();
-//		
-//		tableJPanel.setLayout(new BorderLayout());
-//		
-//		// Column Header
-//		String[] columns = {"tID", "comID", "cID", "firstName", "lastName"};
-//
-//		// Getting Data for Table from Database
-//		//Object[][] data = readAll();
-//
-//		// Creating JTable object passing data and header
-//		JTable employeeTable = new JTable(data, columns);
-//		
-//		
-//		tableJPanel.add(employeeTable.getTableHeader(), BorderLayout.NORTH);
-//		tableJPanel.add(employeeTable, BorderLayout.CENTER);
-//		
-//		return tableJPanel;
-//		}
-
 	
 	public void readAll() {
 
@@ -201,17 +153,26 @@ public class Technicians {
 			ResultSet rs = prest.executeQuery();
 			logger.info("All records were shown");
 			
-			String[] columns = {"tID", "comID", "cID", "firstName", "lastName"};
+			ResultSetMetaData rsmd = rs.getMetaData();
 			
+			DefaultTableModel model = (DefaultTableModel) table.getModel();
 			
+			int cols = rsmd.getColumnCount();
+			String[] colName = new String[cols];
+			
+			for(int i = 0; i < cols; i++) {
+				colName[i] = rsmd.getColumnName(i+1);
+				model.setColumnIdentifiers(colName);
+			}
 			while(rs.next()) {
-				String tID = rs.getString("tID");
-				String comID = rs.getString("comID");
-				String cID = rs.getString("cID");
-				String firstName = rs.getString("firstName");
-				String lastName = rs.getString("lastName");
-				System.out.println("Technician ID: " + tID + " | " + "Complaint ID: " + comID + " | " + " Customer's ID: " + cID + " | " + "Technician's First and Last Name: " + firstName + " "  + lastName);
+				String tID = rs.getString("TID");
+				String firstName = rs.getString("FirstName");
+				String lastName = rs.getString("LastName");
+				String password = rs.getString("Password");
+				System.out.println("Technician ID: " + tID + " | "+ "Technician's First and Last Name: " + firstName + " "  + lastName + " | " + "Password: " + password);
 				
+				String[] row = {tID, firstName, lastName, password};	
+				model.addRow(row);
 			}
 		
 		}catch (Exception e) {
@@ -220,6 +181,22 @@ public class Technicians {
 		}
 	}
 	
+	public void jFrameProperties() {
+		setTitle("Technician Table");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 946, 623);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(219, 95, 487, 341);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+	}
 	
 	public void update(String tID, String input, String select) {
 		logger.trace("update method was run");

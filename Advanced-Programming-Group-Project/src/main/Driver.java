@@ -11,7 +11,7 @@ public class Driver {
 	public static void main(String[] args) {
 		//You might have to make adjustments (if you made changes to the technicians class) to the argument passed in the method create the technicians class. Bellow is just test data to test if the method works.
 		Technicians technicians = new Technicians();
-		//technicians.create("123", "456", "789", "Test", "Ing");
+		//technicians.create("123", "Test", "Ing", "Password");
 		//technicians.readAll();
 		//technicians.create("1234", "735", "589", "Caty", "Luis");
 		//technicians.create("1237", "635", "689", "James", "Bond");
@@ -19,7 +19,9 @@ public class Driver {
 		//technicians.update("123", "Sing", "LastName");
 		//technicians.delete("123");
 		//technicians.readAll();
+		technicians.jFrameProperties();
 		technicians.readAll();
+		technicians.setVisible(true);
 		
 		//Complaints complaints = new Complaints();
 		//You might have to make adjustments (if you made changes to the complaints class) to the argument passed in the method create the complaints class. Bellow is just test data to test if the method works.

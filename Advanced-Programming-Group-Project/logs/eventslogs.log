@@ -193,3 +193,77 @@
 [INFO ] 2022-03-26 10:47:54.807 [main] Technicians - readAll method was run
 [INFO ] 2022-03-26 10:47:54.818 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
 [INFO ] 2022-03-26 10:47:54.837 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:31:31.386 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:31:32.581 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:31:32.591 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:31:32.596 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:32:03.828 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:32:05.012 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:32:05.023 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:32:05.027 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:32:05.027 [main] Technicians - Error: java.lang.NullPointerException: Cannot invoke "javax.swing.JTable.getModel()" because "this.table" is null
+[TRACE] 2022-03-26 11:32:16.488 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:32:17.931 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:32:17.940 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:32:17.946 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:33:37.896 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:33:38.966 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:33:38.975 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:33:38.980 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:33:57.323 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:33:58.637 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:33:58.647 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:33:58.652 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:34:08.735 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 11:34:10.174 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:34:10.183 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:34:10.189 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:34:24.572 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 11:34:25.662 [main] Technicians - Create method was run
+[INFO ] 2022-03-26 11:34:25.673 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID, COMID, CID, FirstName, LastName) VALUES ('123', '456', '789' ,'Test', 'Ing')
+[INFO ] 2022-03-26 11:34:25.681 [main] Technicians - A record with these information was created:  
+TID: 123| COMID: 456| CID: 789| First Name: Test| Last NameIng
+[INFO ] 2022-03-26 11:34:25.693 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:34:25.693 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:34:25.699 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 11:37:50.526 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 11:37:52.024 [main] Technicians - Create method was run
+[INFO ] 2022-03-26 11:37:52.035 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID, COMID, CID, FirstName, LastName) VALUES ('123', '456', '789' ,'Test', 'Ing')
+[ERROR] 2022-03-26 11:37:52.042 [main] Technicians - Error: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '123' for key 'PRIMARY'
+[INFO ] 2022-03-26 11:37:52.054 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 11:37:52.054 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 11:37:52.060 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:02:41.566 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 14:02:43.105 [main] Technicians - Create method was run
+[INFO ] 2022-03-26 14:02:43.126 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID, COMID, CID, FirstName, LastName) VALUES ('123', '456', '789' ,'Test', 'Ing')
+[ERROR] 2022-03-26 14:02:43.140 [main] Technicians - Error: java.sql.SQLSyntaxErrorException: Unknown column 'COMID' in 'field list'
+[INFO ] 2022-03-26 14:02:43.163 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:02:43.164 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:02:43.174 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:10:42.488 [main] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 14:10:43.885 [main] Technicians - Create method was run
+[INFO ] 2022-03-26 14:10:43.909 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('123' ,'Test' , 'Ing', 'Password')
+[INFO ] 2022-03-26 14:10:43.916 [main] Technicians - A record with these information was created:  
+TID: 123| First Name: Test| Last NameIngPassword: Password
+[INFO ] 2022-03-26 14:10:43.937 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:10:43.938 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:10:43.949 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:10:43.956 [main] Technicians - Error: java.sql.SQLException: Column 'comID' not found.
+[TRACE] 2022-03-26 14:11:16.068 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 14:11:17.477 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:11:17.492 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:11:17.500 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:11:17.513 [main] Technicians - Error: java.sql.SQLException: Column 'comID' not found.
+[TRACE] 2022-03-26 14:14:19.906 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 14:14:21.289 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:14:21.308 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:14:21.321 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:14:21.338 [main] Technicians - Error: java.sql.SQLException: Column 'comID' not found.
+[TRACE] 2022-03-26 14:16:26.515 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 14:16:28.563 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:16:28.590 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:16:28.598 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 14:16:34.399 [main] Technicians - Entered Technician Class
+[INFO ] 2022-03-26 14:16:36.005 [main] Technicians - readAll method was run
+[INFO ] 2022-03-26 14:16:36.025 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
+[INFO ] 2022-03-26 14:16:36.037 [main] Technicians - All records were shown
