@@ -1,4 +1,4 @@
-package modules;
+package view;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -94,6 +94,18 @@ public class DatabaseSelection extends JInternalFrame  {
 					}
 				}else if(dbOptionsCBox.getSelectedItem() == "Customer Service Rep") {
 					System.out.println("Customer");
+					if(function == "Add") {
+						System.out.println("Add");
+							try {
+								setClosed(true);
+							} catch (PropertyVetoException e1) {
+								e1.printStackTrace();
+							}
+							desktop.add(new addCustomerServiceRepForm());				
+					}
+					else if(function == "Update") {
+						System.out.println("Update");
+					}
 				}else if(dbOptionsCBox.getSelectedItem() == "Complaints") {
 					System.out.println("Complaints");
 				}else if(dbOptionsCBox.getSelectedItem() == "Accounts") {

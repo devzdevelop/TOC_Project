@@ -276,3 +276,8 @@ TID: 123| First Name: Test| Last NameIngPassword: Password
 [INFO ] 2022-03-26 22:09:07.753 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('451' ,'Devin' , 'Brown', 'Password')
 [INFO ] 2022-03-26 22:09:07.758 [AWT-EventQueue-0] Technicians - A record with these information was created:  
 TID: 451| First Name: Devin| Last NameBrownPassword: Password
+[TRACE] 2022-03-26 22:42:20.945 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 22:42:22.343 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-26 22:42:22.358 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('543' ,'Jason' , 'Bowen', 'Password')
+[INFO ] 2022-03-26 22:42:22.364 [AWT-EventQueue-0] Technicians - A record with these information was created:  
+TID: 543| First Name: Jason| Last NameBowenPassword: Password

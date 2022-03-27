@@ -1,4 +1,4 @@
-package modules;
+package view;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JTextArea;

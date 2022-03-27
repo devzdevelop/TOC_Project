@@ -1,4 +1,4 @@
-package modules;
+package view;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -8,6 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import modules.Technicians;
+
 import java.awt.Color;
 
 public class addTechnicianForm extends JInternalFrame{

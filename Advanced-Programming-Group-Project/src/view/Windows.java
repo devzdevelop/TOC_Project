@@ -1,4 +1,4 @@
-package modules;
+package view;
 
 import java.awt.EventQueue;
 
@@ -13,6 +13,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButtonMenuItem;
+
+import modules.ShowTechniciansTableInternalFrame;
 
 @SuppressWarnings("serial")
 public class Windows extends JFrame implements WindowListener{

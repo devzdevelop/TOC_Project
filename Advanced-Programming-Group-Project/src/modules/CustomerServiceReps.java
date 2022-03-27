@@ -11,7 +11,9 @@ public class CustomerServiceReps {
 	private  String CID;
 	private  String Firstname;
 	private  String lastName;
+	private String password;
 	private Connection myconn;
+	
 	
 	public CustomerServiceReps() {
 		myconn = DBConnectorFactory.getDatabaseConnection();
@@ -19,17 +21,19 @@ public class CustomerServiceReps {
 		this.CID = "";
 		this.Firstname = "";
 		this.lastName = "";
+		this.password = "";
 	}
 
-	public CustomerServiceReps(String cSID, String cID, String firstname, String lastName, Connection myconn) {
+	public CustomerServiceReps(String cSID, String cID, String firstname, String lastName, String password) {
 		super();
 		CSID = cSID;
 		CID = cID;
 		Firstname = firstname;
 		this.lastName = lastName;
+		this.password = password;
 		this.myconn = myconn;
 	}
-
+	
 
 	public String getCSID() {
 		return CSID;
@@ -62,6 +66,14 @@ public class CustomerServiceReps {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public Connection getMyconn() {
 		return myconn;
@@ -71,8 +83,8 @@ public class CustomerServiceReps {
 		this.myconn = myconn;
 	}
 	
-	public void create(String CSID, String CID, String firstName, String lastName) {
-		String sql = "INSERT INTO customer_service_rep (CSID, CID, FirstName, LastName) VALUES (?, ? ,?, ?)";
+	public void create(String CSID, String CID, String firstName, String lastName, String password) {
+		String sql = "INSERT INTO customer_service_rep (CSID, CID, FirstName, LastName, Password) VALUES (?, ? ,?, ?, ?)";
 		PreparedStatement prest;
 		System.out.println(myconn);
 		try {
@@ -81,6 +93,7 @@ public class CustomerServiceReps {
 			prest.setString(2, CID);
 			prest.setString(3, firstName);
 			prest.setString(4, lastName);
+			prest.setString(5, password);
 			System.out.println(prest);
 			
 			prest.executeUpdate();
