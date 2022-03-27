@@ -267,3 +267,12 @@ TID: 123| First Name: Test| Last NameIngPassword: Password
 [INFO ] 2022-03-26 14:16:36.005 [main] Technicians - readAll method was run
 [INFO ] 2022-03-26 14:16:36.025 [main] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: SELECT * FROM Technicians
 [INFO ] 2022-03-26 14:16:36.037 [main] Technicians - All records were shown
+[TRACE] 2022-03-26 22:08:28.261 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 22:08:29.549 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-26 22:08:29.558 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('123' ,'Devin' , 'Brown', 'Password')
+[ERROR] 2022-03-26 22:08:29.571 [AWT-EventQueue-0] Technicians - Error: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '123' for key 'PRIMARY'
+[TRACE] 2022-03-26 22:09:06.230 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-26 22:09:07.743 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-26 22:09:07.753 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('451' ,'Devin' , 'Brown', 'Password')
+[INFO ] 2022-03-26 22:09:07.758 [AWT-EventQueue-0] Technicians - A record with these information was created:  
+TID: 451| First Name: Devin| Last NameBrownPassword: Password
