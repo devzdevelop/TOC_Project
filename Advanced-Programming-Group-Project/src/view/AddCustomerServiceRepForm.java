@@ -13,12 +13,9 @@ import javax.swing.JTextField;
 import modules.CustomerServiceReps;
 import modules.Technicians;
 
-public class addCustomerServiceRepForm extends JInternalFrame{
-	
-	/**
-	 * 
-	 */
+public class AddCustomerServiceRepForm extends JInternalFrame{
 	private static final long serialVersionUID = 1L;
+	
 	private JLabel cIDLabel;
 	private JLabel firstNameLabel;
 	private JLabel lastNameLabel;
@@ -32,8 +29,8 @@ public class addCustomerServiceRepForm extends JInternalFrame{
 	private JLabel csIDLabel;
 	private JTextField csIDTextField;
 	
-	public addCustomerServiceRepForm () {
-		super("Customer Service Rep", true, true, true, true);
+	public AddCustomerServiceRepForm () {
+		super("Add Customer Service Rep", true, true, true, true);
 		
 		intializeComponents();
 		addComponentsToWindow();

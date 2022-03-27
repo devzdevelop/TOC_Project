@@ -3,6 +3,9 @@ package view;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+
+import modules.ShowTechniciansTableInternalFrame;
+
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -64,7 +67,7 @@ public class DatabaseSelection extends JInternalFrame  {
 		goBtn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				if(dbOptionsCBox.getSelectedItem() == "Customers") {
+				if(dbOptionsCBox.getSelectedItem() == "Customers") { //Customers Selected
 					System.out.println("Customers");
 					if(function == "Add") {
 						System.out.println("Add");
@@ -73,12 +76,18 @@ public class DatabaseSelection extends JInternalFrame  {
 							} catch (PropertyVetoException e1) {
 								e1.printStackTrace();
 							}
-							desktop.add(new addCustomerForm());				
+							desktop.add(new AddCustomerForm());				
 					}
 					else if(function == "Update") {
 						System.out.println("Update");
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						desktop.add(new UpdateSelection("Customers"));
 					}
-				}else if(dbOptionsCBox.getSelectedItem() == "Technicians") {
+				}else if(dbOptionsCBox.getSelectedItem() == "Technicians") {//Technicians Selected
 					System.out.println("Technicians");
 					if(function == "Add") {
 						System.out.println("Add");
@@ -87,13 +96,27 @@ public class DatabaseSelection extends JInternalFrame  {
 							} catch (PropertyVetoException e1) {
 								e1.printStackTrace();
 							}
-							desktop.add(new addTechnicianForm());				
+							desktop.add(new AddTechnicianForm());				
 					}
 					else if(function == "Update") {
 						System.out.println("Update");
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						desktop.add(new UpdateSelection("Technicians"));
+					}else if(function == "ViewAll") {
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						System.out.println("ViewAll");
+						desktop.add(new ShowTechniciansTableInternalFrame());
 					}
-				}else if(dbOptionsCBox.getSelectedItem() == "Customer Service Rep") {
-					System.out.println("Customer");
+				}else if(dbOptionsCBox.getSelectedItem() == "Customer Service Rep") {//Customer Service Rep Selected
+					System.out.println("Customer Service Rep");
 					if(function == "Add") {
 						System.out.println("Add");
 							try {
@@ -101,15 +124,57 @@ public class DatabaseSelection extends JInternalFrame  {
 							} catch (PropertyVetoException e1) {
 								e1.printStackTrace();
 							}
-							desktop.add(new addCustomerServiceRepForm());				
+							desktop.add(new AddCustomerServiceRepForm());				
 					}
 					else if(function == "Update") {
 						System.out.println("Update");
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						desktop.add(new UpdateSelection("Customer Service Rep"));
 					}
-				}else if(dbOptionsCBox.getSelectedItem() == "Complaints") {
+				}else if(dbOptionsCBox.getSelectedItem() == "Complaints") {//Complaints Selected
 					System.out.println("Complaints");
-				}else if(dbOptionsCBox.getSelectedItem() == "Accounts") {
+					if(function == "Add") {
+						System.out.println("Add");
+							try {
+								setClosed(true);
+							} catch (PropertyVetoException e1) {
+								e1.printStackTrace();
+							}
+							desktop.add(new AddComplaintForm());				
+					}
+					else if(function == "Update") {
+						System.out.println("Update");
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						desktop.add(new UpdateSelection("Complaints"));
+					}
+				}else if(dbOptionsCBox.getSelectedItem() == "Accounts") {//Accounts Selected
 					System.out.println("Accounts");
+					if(function == "Add") {//Add
+						System.out.println("Add");
+							try {
+								setClosed(true);
+							} catch (PropertyVetoException e1) {
+								e1.printStackTrace();
+							}
+							desktop.add(new AddAccountForm());				
+					}
+					else if(function == "Update") {//Update
+						System.out.println("Update");
+						try {
+							setClosed(true);
+						} catch (PropertyVetoException e1) {
+							e1.printStackTrace();
+						}
+						desktop.add(new UpdateSelection("Accounts"));
+					}
 				}
 			}
 		});

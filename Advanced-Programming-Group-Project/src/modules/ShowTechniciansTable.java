@@ -1,16 +1,13 @@
 package modules;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import factories.DBConnectorFactory;
 
-import java.awt.GridBagLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +17,8 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 
 public class ShowTechniciansTable extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
 	private JTable table;
 	private Connection myconn = DBConnectorFactory.getDatabaseConnection();

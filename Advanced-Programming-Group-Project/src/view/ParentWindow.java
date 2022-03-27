@@ -3,7 +3,6 @@ package view;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -12,21 +11,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JRadioButtonMenuItem;
-
 import modules.ShowTechniciansTableInternalFrame;
 
 @SuppressWarnings("serial")
-public class Windows extends JFrame implements WindowListener{
+public class ParentWindow extends JFrame implements WindowListener{
 	private JDesktopPane desktop;
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Windows frame = new Windows();
+					ParentWindow frame = new ParentWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,10 +30,8 @@ public class Windows extends JFrame implements WindowListener{
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Windows() {
+	
+	public ParentWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 729, 488);
 		desktop = new JDesktopPane();
@@ -56,6 +49,9 @@ public class Windows extends JFrame implements WindowListener{
 		
 		JMenuItem updateUserMenuItem = new JMenuItem("Update User");
 		fileMenu.add(updateUserMenuItem);
+		
+		JMenuItem viewUsersMenuItem = new JMenuItem("View Users");
+		fileMenu.add(viewUsersMenuItem);
 		
 		
 		
@@ -77,11 +73,17 @@ public class Windows extends JFrame implements WindowListener{
 			}
 		});
 		
+		viewUsersMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				desktop.add(new DatabaseSelection("ViewAll", desktop));
+			}
+		});
+		
 		JMenuItem technicianMenuItem = new JMenuItem("Technicians Table");
 		technicianMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				desktop.add(new DatabaseSelection("Update", desktop));
-				desktop.add(new ShowTechniciansTableInternalFrame());
+				//desktop.add(new ShowTechniciansTableInternalFrame());
 			}
 		});
 		

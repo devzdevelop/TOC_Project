@@ -281,3 +281,17 @@ TID: 451| First Name: Devin| Last NameBrownPassword: Password
 [INFO ] 2022-03-26 22:42:22.358 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('543' ,'Jason' , 'Bowen', 'Password')
 [INFO ] 2022-03-26 22:42:22.364 [AWT-EventQueue-0] Technicians - A record with these information was created:  
 TID: 543| First Name: Jason| Last NameBowenPassword: Password
+[TRACE] 2022-03-27 08:51:15.394 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 08:54:50.817 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 08:54:52.570 [AWT-EventQueue-0] Technicians - update method was run
+[INFO ] 2022-03-27 08:54:52.570 [AWT-EventQueue-0] Technicians - FirstName was changed to: John
+[INFO ] 2022-03-27 08:54:52.582 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE Technicians SET FirstName = 'John' WHERE TID = '451'
+[TRACE] 2022-03-27 10:35:43.244 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 10:35:44.791 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-27 10:35:44.808 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('8625' ,'Sarah' , 'Chaplen', 'Password')
+[INFO ] 2022-03-27 10:35:44.816 [AWT-EventQueue-0] Technicians - A record with these information was created:  
+TID: 8625| First Name: Sarah| Last NameChaplenPassword: Password
+[TRACE] 2022-03-27 10:36:09.981 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 10:36:09.981 [AWT-EventQueue-0] Technicians - update method was run
+[INFO ] 2022-03-27 10:36:09.982 [AWT-EventQueue-0] Technicians - LastName was changed to: Smithen
+[INFO ] 2022-03-27 10:36:09.982 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE Technicians SET LastName = 'Smithen' WHERE TID = '451'
