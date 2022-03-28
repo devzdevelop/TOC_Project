@@ -93,7 +93,7 @@ public class SpaceVehicle {
 				double LS10 = rand.nextInt(20); //Should not be less than 10
 				double MIR5 = rand.nextInt(2500); //Should not exceed 1500
 				
-				System.out.println(SW30+ " " +UPW+ " " +ATC10+ " " +DTC10+ " " +TDC3+ " " +DCF5+ " " +CL4500+ " " +CCF10+ " " +CCD+ " " +LS10+ " " +MIR5+ " ");
+//				System.out.println(SW30+ " " +UPW+ " " +ATC10+ " " +DTC10+ " " +TDC3+ " " +DCF5+ " " +CL4500+ " " +CCF10+ " " +CCD+ " " +LS10+ " " +MIR5+ " ");
 				
 				
 				
