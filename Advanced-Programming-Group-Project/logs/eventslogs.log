@@ -295,3 +295,20 @@ TID: 8625| First Name: Sarah| Last NameChaplenPassword: Password
 [TRACE] 2022-03-27 10:36:09.981 [AWT-EventQueue-0] Technicians - update method was run
 [INFO ] 2022-03-27 10:36:09.982 [AWT-EventQueue-0] Technicians - LastName was changed to: Smithen
 [INFO ] 2022-03-27 10:36:09.982 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE Technicians SET LastName = 'Smithen' WHERE TID = '451'
+[TRACE] 2022-03-27 16:16:57.626 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 16:16:57.758 [AWT-EventQueue-0] Technicians - Create method was run
+[ERROR] 2022-03-27 16:16:57.760 [AWT-EventQueue-0] Technicians - Error: java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.myconn" is null
+[TRACE] 2022-03-27 16:17:18.715 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 16:17:20.858 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-27 16:17:20.875 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('876' ,'Lora' , 'Grace', 'Password')
+[INFO ] 2022-03-27 16:17:20.891 [AWT-EventQueue-0] Technicians - A record with these information was created:  
+TID: 876| First Name: Lora| Last NameGracePassword: Password
+[TRACE] 2022-03-27 16:19:28.675 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 16:19:30.881 [AWT-EventQueue-0] Technicians - Create method was run
+[INFO ] 2022-03-27 16:19:30.897 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO Technicians (TID , FirstName, LastName, Password) VALUES ('843' ,'Georgia' , 'Bowen', 'Password')
+[INFO ] 2022-03-27 16:19:30.904 [AWT-EventQueue-0] Technicians - A record with these information was created:  
+TID: 843| First Name: Georgia| Last NameBowenPassword: Password
+[TRACE] 2022-03-27 16:20:53.962 [AWT-EventQueue-0] Technicians - Entered Technician Class
+[TRACE] 2022-03-27 16:20:53.962 [AWT-EventQueue-0] Technicians - update method was run
+[INFO ] 2022-03-27 16:20:53.962 [AWT-EventQueue-0] Technicians - FirstName was changed to: Run
+[INFO ] 2022-03-27 16:20:53.962 [AWT-EventQueue-0] Technicians - com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE Technicians SET FirstName = 'Run' WHERE TID = '123'

@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 
 
@@ -25,6 +26,8 @@ public class DatabaseSelection extends JInternalFrame  {
 	
 	public DatabaseSelection() {
 		super("Database Selection", true, true, true, true);
+		setBackground(Color.ORANGE);
+		getContentPane().setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
 		initializeComponents();
 		addComponentsToWindow();
