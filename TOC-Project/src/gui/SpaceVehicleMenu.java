@@ -32,7 +32,7 @@ public class SpaceVehicleMenu extends JFrame{
 	private JLabel ccf10Lbl;
 	private JLabel ls10Lbl;
 	private JLabel mir5Lbl;
-	private JLabel tpc10Lbl;
+	private JLabel tpl10Lbl;
 	private JTextField sw30TextField;
 	private JTextField upwTextField;
 	private JTextField atc10TextField;
@@ -44,9 +44,14 @@ public class SpaceVehicleMenu extends JFrame{
 	private JTextField ls10TextField;
 	private JTextField mirsTextField;
 	private JTextField tpc10TextField;
-	private ArrayList<String> inputList; 
 	private JLabel ccdLbl;
+	private JRadioButton rdbtnCcdTrue;
+	JRadioButton rdbtnCcdFalse;
+	
+	
+	private ArrayList<String> inputList; 
 	private SpaceVehicle spaceVehicle = new SpaceVehicle();
+	
 	public SpaceVehicleMenu() {
 		getContentPane().setLayout(null);
 		
@@ -65,6 +70,26 @@ public class SpaceVehicleMenu extends JFrame{
 		atcLbl = new JLabel("ATC10: ");
 		dtcLbl = new JLabel("DTC10: ");
 		tdcLbl = new JLabel("TDC3: ");
+		dcfLbl = new JLabel("DCF5: ");
+		cl4500Lbl = new JLabel("CL4500: ");
+		ccf10Lbl = new JLabel("CCF10: ");
+		ls10Lbl = new JLabel("LS10: ");
+		mir5Lbl = new JLabel("MIRS: ");
+		tpl10Lbl = new JLabel("TPL10: ");
+		sw30TextField = new JTextField();
+		upwTextField = new JTextField();
+		atc10TextField = new JTextField();
+		dtc10TextField = new JTextField();
+		tdc3TextField = new JTextField();
+		dcf5TextField = new JTextField();
+		cl4500TextField = new JTextField();
+		ccf10TextField = new JTextField();
+		ls10TextField = new JTextField();
+		mirsTextField = new JTextField();
+		tpc10TextField = new JTextField();
+		rdbtnCcdTrue = new JRadioButton("True");
+		rdbtnCcdFalse = new JRadioButton("False");
+		
 		inputList = new ArrayList<String>();
 	}
 	
@@ -107,97 +132,97 @@ public class SpaceVehicleMenu extends JFrame{
 		tdcLbl.setBounds(147, 292, 122, 37);
 		getContentPane().add(tdcLbl);
 		
-		dcfLbl = new JLabel("DCF5: ");
+		//dcfLbl
 		dcfLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		dcfLbl.setBounds(147, 339, 122, 37);
 		getContentPane().add(dcfLbl);
 		
-		cl4500Lbl = new JLabel("CL4500: ");
+		//cl4500Lbl
 		cl4500Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		cl4500Lbl.setBounds(429, 104, 122, 37);
 		getContentPane().add(cl4500Lbl);
 		
-		ccf10Lbl = new JLabel("CCF10: ");
+		//ccf10Lbl
 		ccf10Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		ccf10Lbl.setBounds(429, 151, 122, 37);
 		getContentPane().add(ccf10Lbl);
 		
-		ls10Lbl = new JLabel("LS10: ");
+		//ls10Lbl
 		ls10Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		ls10Lbl.setBounds(429, 245, 122, 37);
 		getContentPane().add(ls10Lbl);
 		
-		mir5Lbl = new JLabel("MIRS: ");
+		//mir5Lbl
 		mir5Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		mir5Lbl.setBounds(429, 292, 122, 37);
 		getContentPane().add(mir5Lbl);
 		
-		tpc10Lbl = new JLabel("TPC10: ");
-		tpc10Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		tpc10Lbl.setBounds(429, 339, 122, 37);
-		getContentPane().add(tpc10Lbl);
+		//tpc10Lbl
+		tpl10Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		tpl10Lbl.setBounds(429, 339, 122, 37);
+		getContentPane().add(tpl10Lbl);
 		
-		sw30TextField = new JTextField();
+		//sw30TextField
 		sw30TextField.setBounds(215, 115, 96, 19);
 		getContentPane().add(sw30TextField);
 		sw30TextField.setColumns(10);
 		
-		upwTextField = new JTextField();
+		//upwTextField
 		upwTextField.setColumns(10);
 		upwTextField.setBounds(215, 162, 96, 19);
 		getContentPane().add(upwTextField);
 		
-		atc10TextField = new JTextField();
+		//atc10TextField
 		atc10TextField.setColumns(10);
 		atc10TextField.setBounds(215, 209, 96, 19);
 		getContentPane().add(atc10TextField);
 		
-		dtc10TextField = new JTextField();
+		//dtc10TextField
 		dtc10TextField.setColumns(10);
 		dtc10TextField.setBounds(215, 256, 96, 19);
 		getContentPane().add(dtc10TextField);
 		
-		tdc3TextField = new JTextField();
+		//tdc3TextField
 		tdc3TextField.setColumns(10);
 		tdc3TextField.setBounds(215, 303, 96, 19);
 		getContentPane().add(tdc3TextField);
 		
-		dcf5TextField = new JTextField();
+		//dcf5TextField
 		dcf5TextField.setColumns(10);
 		dcf5TextField.setBounds(215, 350, 96, 19);
 		getContentPane().add(dcf5TextField);
 		
-		cl4500TextField = new JTextField();
+		//cl4500TextField
 		cl4500TextField.setColumns(10);
 		cl4500TextField.setBounds(510, 115, 96, 19);
 		getContentPane().add(cl4500TextField);
 		
-		ccf10TextField = new JTextField();
+		//ccf10TextField
 		ccf10TextField.setColumns(10);
 		ccf10TextField.setBounds(510, 162, 96, 19);
 		getContentPane().add(ccf10TextField);
 		
-		ls10TextField = new JTextField();
+		//ls10TextField
 		ls10TextField.setColumns(10);
 		ls10TextField.setBounds(510, 256, 96, 19);
 		getContentPane().add(ls10TextField);
 		
-		mirsTextField = new JTextField();
+		//mirsTextField
 		mirsTextField.setColumns(10);
 		mirsTextField.setBounds(510, 303, 96, 19);
 		getContentPane().add(mirsTextField);
 		
-		tpc10TextField = new JTextField();
+		//tpc10TextField
 		tpc10TextField.setColumns(10);
 		tpc10TextField.setBounds(510, 350, 96, 19);
 		getContentPane().add(tpc10TextField);
 		
-		JRadioButton rdbtnCcdTrue = new JRadioButton("True");
+		//rdbtnCcdTrue
 		rdbtnCcdTrue.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		rdbtnCcdTrue.setBounds(503, 208, 65, 21);
 		getContentPane().add(rdbtnCcdTrue);
 		
-		JRadioButton rdbtnCcdFalse = new JRadioButton("False");
+		//
 		rdbtnCcdFalse.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		rdbtnCcdFalse.setBounds(570, 208, 81, 21);
 		getContentPane().add(rdbtnCcdFalse);
