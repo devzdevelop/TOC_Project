@@ -6,6 +6,8 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import gui.SpaceVehicleStatusMenu;
+
 public class SpaceVehicle {
 	
 	//ArrayList
@@ -34,7 +36,6 @@ public class SpaceVehicle {
 	//Constructors
 	public SpaceVehicle() {
 		this.initializeStates();
-		this.run();
 	}
 	
 	//Getters and setters
@@ -85,47 +86,69 @@ public class SpaceVehicle {
 				//Set launch signal to default
 				this.LS = false;
 				
-				System.out.println("\nCurrent State: " + this.getCurrentState() + "\n");
+				//System.out.println("\nCurrent State: " + this.getCurrentState() + "\n");
 				
 				this.LS = true;
 				
+				//input: LSSRBMECOETOISDSRSSLS
+				//Test Code. Uncomment and run driver to test without gui. Test data is for the accept state only
+//				inputList.add("LS");
+//				inputList.add("SRB");
+//				inputList.add("MECO");
+//				inputList.add("ET");
+//				inputList.add("OIS");
+//				inputList.add("DS");
+//				inputList.add("RS");
+//				inputList.add("SLS");
+				
 				//changing state
-				this.changeState(currentState);
+				//idea: need a loop to keep track of how many times it's needed to run this method. 
+				//run through the arrayList and pass each input inside the changeState method. 
+				//Therefore, the loop will only stop once it has gone through the array list which means that the input would be completed.
+				
+				//System.out.println(inputList); //Check inputList for correct data
+				for(String inputList: inputList) {
+					this.changeState(currentState, inputList);
+				}
+				
 				
 				System.out.println("\nCurrent State: " + this.getCurrentState());
+				
+//				new SpaceVehicleStatusMenu(this); //uncomment when using test code
+				
 				
 				//Test print all states
 //				this.getAllStates();
 	}
 
-	public State changeState(State currentState) {
+	public State changeState(State currentState, String input) {
 		Random rand = new Random();
 		
-		//Test Data
-		SW30 = 25; 
-		UPW = 10;
-		ATC10 = 20; 
-		DTC10 = 50;
-		TDC3 = 9;
-		DCF5 = 8;
-		CL4500 = 500;
-		CCF10 = 17;
-		CCD = false;
-		LS10 = 4	;
-		MIR5 = 10;
+		//Test Code. Uncomment and run driver to test without gui. The data is to satisfy the LO state only.
+//		SW30 = 25; 
+//		UPW = 10;
+//		ATC10 = 20; 
+//		DTC10 = 50;
+//		TDC3 = 9;
+//		DCF5 = 8;
+//		CL4500 = 500;
+//		CCF10 = 17;
+//		CCD = false;
+//		LS10 = 11;
+//		MIR5 = 9;
 		
 		switch(currentState.getKey()){
 			case "LP":
 				
 				if (SW30>30 || UPW>15 || ATC10<10 || DTC10<10 || TDC3<3 || DCF5<5 || CL4500>4500 || CCF10<10 || CCD==true) {
                     this.currentState = this.changeCurrentState("AC", statesList);
-                    System.out.println("Abort");
+//                    System.out.println("Abort"); //Checked if this is working
                 }else if (LS10<10 || MIR5>1500) {
                     this.currentState = this.changeCurrentState("DL", statesList);
-                    System.out.println("Delay");
-                }else{
+//                    System.out.println("Delay"); //Checked if this is working
+                }else if(SW30<30 && UPW<15 && ATC10>10 && DTC10>10 && TDC3>3 && DCF5>5 && CL4500<4500 && CCF10>10 && CCD==false && input.equalsIgnoreCase("LS")){
                     this.currentState = this.changeCurrentState("LO", statesList);
-                    System.out.println("Lift Off");    
+//                    System.out.println("Lift Off \n"); //Checked if this is working
                 }
 
 				break;
@@ -143,14 +166,12 @@ public class SpaceVehicle {
                 break;
 
             case "LO":
-                String input; 
-               // if(input.equals("SRB"))
+                if(input.equals("SRB"))
                  this.currentState = this.changeCurrentState("PA", statesList);
                  
                  break;
                  
             case "PA":
-                input = "";
                 if(input.equals("MECO")) {
                     this.currentState = this.changeCurrentState("IG", statesList);
                 }else if(input.equals("RTLS")){
@@ -160,7 +181,6 @@ public class SpaceVehicle {
             }
 
             case "IG":
-            	 input = "";
                 if(input.equals("ET")) {
                     this.currentState = this.changeCurrentState("SS", statesList);
                 }else if(input.equals("TAL")){
@@ -170,7 +190,6 @@ public class SpaceVehicle {
                 break;
 
             case "SS":
-            	 input = "";
                 if(input.equals("OIS")) {
                     this.currentState = this.changeCurrentState("OO", statesList);
                 }else if(input.equals("AOA")){
@@ -180,7 +199,6 @@ public class SpaceVehicle {
                 break;
                 
             case "OO":
-            	input = "";
                 if(input.equals("DS")) {
                     this.currentState = this.changeCurrentState("BB", statesList);
                 }else if(input.equals("ATO")){
@@ -190,7 +208,6 @@ public class SpaceVehicle {
                 break;
                 
             case "BB":
-            	input = "";
                 if(input.equals("RS")) {
                     this.currentState = this.changeCurrentState("EB", statesList);
                 }else if(input.equals("CAS")){
@@ -200,25 +217,23 @@ public class SpaceVehicle {
                 break;
                 
             case "EB":
-            	input = "";
                 if(input.equals("SLS")) {
                     this.currentState = this.changeCurrentState("SD", statesList);
+                    System.out.println("\nAccept State");
                 }
                 
                 break;
                 
             case "SD":
+            	
             	 break;
                  
             case "AC":
+            	 this.currentState = this.changeCurrentState("AC", statesList);
             	 break;
                  
         }
-
-		
-		
-		return currentState;
-		
+		return currentState;	
 	}
 	
 	public State changeCurrentState(String nextCurrentState,ArrayList<State> statesList) {
@@ -234,5 +249,4 @@ public class SpaceVehicle {
 		
 		return newCurrentState;
 	}
-	
 }

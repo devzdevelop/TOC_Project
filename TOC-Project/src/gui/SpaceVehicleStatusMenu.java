@@ -20,19 +20,36 @@ public class SpaceVehicleStatusMenu extends JFrame {
 	private JLabel lblCounterLResults;
 	private JLabel lblCounterTResults;
 	private JLabel lblCounterDResults;
+	private SpaceVehicle spaceVehicle;
+	private String input;
 	
 	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle) {
 		getContentPane().setLayout(null);
-		
-		intializeComponents();
+		//this.spaceVehicle = spaceVehicle;
+		intializeComponents(spaceVehicle);
 		addComponentsToWindow();
 		setWindowProperties();
 	}
 
-	private void intializeComponents() {
+	private void intializeComponents(SpaceVehicle spaceVehicle) {
 		lblSpaceVehicleStatus = new JLabel("Space Vehicle Status");
-		lblCurrentState = new JLabel("Current State: ");
-		lblCurrentInput = new JLabel("Current Input: ");
+//		lblCurrentState = new JLabel("Current State: ");
+//		lblCurrentInput = new JLabel("Current Input: ");
+		lblCurrentState = new JLabel("Current State: " + spaceVehicle.getCurrentState().getValue());
+		
+		int count = 0;
+		for(String inputList: spaceVehicle.inputList) {
+			if(count < 1) {
+				input = inputList;
+				count++;
+			}else {
+				input = input + inputList;
+				count++;
+			}
+			
+		}
+		
+		lblCurrentInput = new JLabel("Current Input: " + input);
 		lblCounterL = new JLabel("Counter L: ");
 		lblCounterT = new JLabel("Counter T: ");
 		lblCounterD = new JLabel("Counter D: ");
@@ -51,12 +68,12 @@ public class SpaceVehicleStatusMenu extends JFrame {
 		
 		//lblCurrentState
 		lblCurrentState.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCurrentState.setBounds(195, 132, 122, 37);
+		lblCurrentState.setBounds(195, 132, 409, 37);
 		getContentPane().add(lblCurrentState);
 		
 		//lblCurrentInput
 		lblCurrentInput.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCurrentInput.setBounds(195, 179, 122, 37);
+		lblCurrentInput.setBounds(195, 179, 341, 37);
 		getContentPane().add(lblCurrentInput);
 		
 		//lblCounterL

@@ -42,7 +42,7 @@ public class SpaceVehicleMenu extends JFrame{
 	private JTextField cl4500TextField;
 	private JTextField ccf10TextField;
 	private JTextField ls10TextField;
-	private JTextField mirsTextField;
+	private JTextField mir5TextField;
 	private JTextField tpc10TextField;
 	private JLabel ccdLbl;
 	private JRadioButton rdbtnCcdTrue;
@@ -85,7 +85,7 @@ public class SpaceVehicleMenu extends JFrame{
 		cl4500TextField = new JTextField();
 		ccf10TextField = new JTextField();
 		ls10TextField = new JTextField();
-		mirsTextField = new JTextField();
+		mir5TextField = new JTextField();
 		tpc10TextField = new JTextField();
 		rdbtnCcdTrue = new JRadioButton("True");
 		rdbtnCcdFalse = new JRadioButton("False");
@@ -207,10 +207,10 @@ public class SpaceVehicleMenu extends JFrame{
 		ls10TextField.setBounds(510, 256, 96, 19);
 		getContentPane().add(ls10TextField);
 		
-		//mirsTextField
-		mirsTextField.setColumns(10);
-		mirsTextField.setBounds(510, 303, 96, 19);
-		getContentPane().add(mirsTextField);
+		//mir5TextField
+		mir5TextField.setColumns(10);
+		mir5TextField.setBounds(510, 303, 96, 19);
+		getContentPane().add(mir5TextField);
 		
 		//tpc10TextField
 		tpc10TextField.setColumns(10);
@@ -245,25 +245,41 @@ public class SpaceVehicleMenu extends JFrame{
 		//startBtn
 		startBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ArrayList<String> textFieldList = new ArrayList<String>();
 				//SpaceVehicle spaceVehicle = new SpaceVehicle();
 				spaceVehicle.SW30 = Double.parseDouble(sw30TextField.getText());
+				textFieldList.add(sw30TextField.getText());
 				spaceVehicle.UPW = Double.parseDouble(upwTextField.getText());
+				textFieldList.add(upwTextField.getText());
 				spaceVehicle.ATC10 = Double.parseDouble(atc10TextField.getText());
+				textFieldList.add(atc10TextField.getText());
 				spaceVehicle.DTC10 = Double.parseDouble(dtc10TextField.getText());
+				textFieldList.add(dtc10TextField.getText());
 				spaceVehicle.TDC3 = Double.parseDouble(tdc3TextField.getText());
+				textFieldList.add(tdc3TextField.getText());
 				spaceVehicle.DCF5 = Double.parseDouble(dcf5TextField.getText());
+				textFieldList.add(dcf5TextField.getText());
 				spaceVehicle.CL4500 = Double.parseDouble(cl4500TextField.getText());
+				textFieldList.add(cl4500TextField.getText());
 				spaceVehicle.CCF10 = Double.parseDouble(ccf10TextField.getText());
+				textFieldList.add(ccf10TextField.getText());
+				
 				if(rdbtnCcdTrue.isSelected() == true) {
 					spaceVehicle.CCD = true;
+					textFieldList.add("true");
 				} else if(rdbtnCcdTrue.isSelected() == false) {
 					spaceVehicle.CCD = false;
+					textFieldList.add("false");
 				}
 				
-				System.out.println(spaceVehicle.CCD);
 				spaceVehicle.LS10 = Double.parseDouble(ls10TextField.getText());
-				spaceVehicle.MIR5 = Double.parseDouble(mirsTextField.getText());
+				textFieldList.add(ls10TextField.getText());
+				spaceVehicle.MIR5 = Double.parseDouble(mir5TextField.getText());
+				textFieldList.add(mir5TextField.getText());
+				
+				System.out.println(textFieldList);
 				//spaceVehicle.TPL10 = Double.parseDouble(tcl10TextField.getText());
+				spaceVehicle.run();
 				new SpaceVehicleStatusMenu(spaceVehicle);
 			}
 		});
