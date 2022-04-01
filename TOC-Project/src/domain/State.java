@@ -48,7 +48,7 @@ public class State {
 
 	@Override
 	public String toString() {
-		return "State [key=" + key + ", value=" + value + ", nextStateKeyList=" + nextStateKeyList + "]";
+		return "key = " + key + " | value = " + value + " | nextStateKeyList = " + nextStateKeyList;
 	}
 	
 	

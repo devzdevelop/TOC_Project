@@ -238,6 +238,7 @@ public class SpaceVehicleMenu extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				//inputList.add(JOptionPane.showInputDialog("Enter inputs: "));
 				spaceVehicle.inputList.add(JOptionPane.showInputDialog("Enter inputs: "));
+				
 			}
 		});
 		
@@ -245,7 +246,6 @@ public class SpaceVehicleMenu extends JFrame{
 		startBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//SpaceVehicle spaceVehicle = new SpaceVehicle();
-				//String [] itemsArray = {"SW30", "UPW", "ATC10", "DTC10", "TDC3", "DCF5", "CL4500", "CCF10", "CCD", "LS10", "MIRS", "TPC10"};
 				spaceVehicle.SW30 = Double.parseDouble(sw30TextField.getText());
 				spaceVehicle.UPW = Double.parseDouble(upwTextField.getText());
 				spaceVehicle.ATC10 = Double.parseDouble(atc10TextField.getText());
@@ -263,7 +263,7 @@ public class SpaceVehicleMenu extends JFrame{
 				System.out.println(spaceVehicle.CCD);
 				spaceVehicle.LS10 = Double.parseDouble(ls10TextField.getText());
 				spaceVehicle.MIR5 = Double.parseDouble(mirsTextField.getText());
-				//spaceVehicle.TPC10 = Double.parseDouble(sw30TextField.getText());
+				//spaceVehicle.TPL10 = Double.parseDouble(tcl10TextField.getText());
 				new SpaceVehicleStatusMenu(spaceVehicle);
 			}
 		});
