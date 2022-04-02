@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import domain.SpaceVehicle;
+import domain.State;
 
 import java.awt.Font;
 import java.util.ArrayList;
@@ -22,34 +23,26 @@ public class SpaceVehicleStatusMenu extends JFrame {
 	private JLabel lblCounterDResults;
 	private SpaceVehicle spaceVehicle;
 	private String input;
+	private ArrayList<String> currentState;
+	public ArrayList<String> inputList = new ArrayList<String>();
 	
-	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle) {
+	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle, ArrayList<String> currentState, ArrayList<String> inputList) {
 		getContentPane().setLayout(null);
 		//this.spaceVehicle = spaceVehicle;
+		this.currentState = currentState;
+		this.inputList = inputList;
 		intializeComponents(spaceVehicle);
 		addComponentsToWindow();
 		setWindowProperties();
+		realTimeStatus();
 	}
 
 	private void intializeComponents(SpaceVehicle spaceVehicle) {
 		lblSpaceVehicleStatus = new JLabel("Space Vehicle Status");
 //		lblCurrentState = new JLabel("Current State: ");
 //		lblCurrentInput = new JLabel("Current Input: ");
-		lblCurrentState = new JLabel("Current State: " + spaceVehicle.getCurrentState().getValue());
-		
-		int count = 0;
-		for(String inputList: spaceVehicle.inputList) {
-			if(count < 1) {
-				input = inputList;
-				count++;
-			}else {
-				input = input + inputList;
-				count++;
-			}
-			
-		}
-		
-		lblCurrentInput = new JLabel("Current Input: " + input);
+		lblCurrentState = new JLabel("Current State: ");
+		lblCurrentInput = new JLabel("Current Input: ");
 		lblCounterL = new JLabel("Counter L: ");
 		lblCounterT = new JLabel("Counter T: ");
 		lblCounterD = new JLabel("Counter D: ");
@@ -123,6 +116,28 @@ public class SpaceVehicleStatusMenu extends JFrame {
 		setBounds(100, 100, 889, 715);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void realTimeStatus() {
+		for(String currentState: currentState) {
+			try {
+				lblCurrentState.setText("Current State: " + currentState);
+				Thread.sleep(2000);
+			System.out.println(currentState);		
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(String inputList: inputList) {
+			try {
+				lblCurrentInput.setText("Current Input: " + inputList);
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
 	}
 	
 	public static void main(String [] args) {

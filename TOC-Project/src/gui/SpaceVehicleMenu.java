@@ -280,7 +280,7 @@ public class SpaceVehicleMenu extends JFrame{
 				System.out.println(textFieldList);
 				//spaceVehicle.TPL10 = Double.parseDouble(tcl10TextField.getText());
 				spaceVehicle.run();
-				new SpaceVehicleStatusMenu(spaceVehicle);
+				//new SpaceVehicleStatusMenu(spaceVehicle);
 			}
 		});
 	}

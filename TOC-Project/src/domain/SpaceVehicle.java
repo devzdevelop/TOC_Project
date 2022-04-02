@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.JOptionPane;
-
 import gui.SpaceVehicleStatusMenu;
 
 public class SpaceVehicle {
@@ -16,7 +14,7 @@ public class SpaceVehicle {
 	
 	//Current State
 	private State currentState;
-	
+	private ArrayList<String> currStateList;
 	//Aborts
 	public double SW30; //Should not exceed 30
 	public double UPW; //Should not exceed 15
@@ -30,6 +28,7 @@ public class SpaceVehicle {
 	//Delay
 	public double LS10; //Should not be less than 10
 	public double MIR5; //Should not exceed 1500
+	@SuppressWarnings("unused")
 	private boolean LS;
 	
 	
@@ -70,6 +69,8 @@ public class SpaceVehicle {
 		statesList.add(new State("BB", "Boostback Burn", new ArrayList<>(List.of("AC", "EB"))));
 		statesList.add(new State("EB", "Entry Burn", new ArrayList<>(List.of("SD"))));
 		statesList.add(new State("SD", "Splashdown", new ArrayList<>(List.of(""))));
+		
+		currStateList = new ArrayList<String>();
 	}
 	
 	public void getAllStates() {
@@ -86,37 +87,40 @@ public class SpaceVehicle {
 				//Set launch signal to default
 				this.LS = false;
 				
-				//System.out.println("\nCurrent State: " + this.getCurrentState() + "\n");
+				System.out.println("\nCurrent State: " + this.getCurrentState() + "\n");
 				
 				this.LS = true;
 				
 				//input: LSSRBMECOETOISDSRSSLS
 				//Test Code. Uncomment and run driver to test without gui. Test data is for the accept state only
-//				inputList.add("LS");
-//				inputList.add("SRB");
-//				inputList.add("MECO");
-//				inputList.add("ET");
-//				inputList.add("OIS");
-//				inputList.add("DS");
-//				inputList.add("RS");
-//				inputList.add("SLS");
+				inputList.add("LS");
+				inputList.add("SRB");
+				inputList.add("MECO");
+				inputList.add("ET");
+				inputList.add("OIS");
+				inputList.add("DS");
+				inputList.add("RS");
+				inputList.add("SLS");
 				
 				//changing state
 				//idea: need a loop to keep track of how many times it's needed to run this method. 
 				//run through the arrayList and pass each input inside the changeState method. 
 				//Therefore, the loop will only stop once it has gone through the array list which means that the input would be completed.
 				
-				//System.out.println(inputList); //Check inputList for correct data
+				System.out.println(inputList); //Check inputList for correct data
+				String currState;
 				for(String inputList: inputList) {
 					this.changeState(currentState, inputList);
+					currStateList.add(getCurrentState().getValue());
 				}
+				//changeState(currentState, "");
+				//this.changeState(currentState, "");
 				
+				System.out.println("\nCurrent State: " + currStateList);
 				
-				System.out.println("\nCurrent State: " + this.getCurrentState());
+				 //uncomment when using test code
 				
-//				new SpaceVehicleStatusMenu(this); //uncomment when using test code
-				
-				
+				new SpaceVehicleStatusMenu(this, currStateList, inputList);
 				//Test print all states
 //				this.getAllStates();
 	}
@@ -125,17 +129,17 @@ public class SpaceVehicle {
 		Random rand = new Random();
 		
 		//Test Code. Uncomment and run driver to test without gui. The data is to satisfy the LO state only.
-//		SW30 = 25; 
-//		UPW = 10;
-//		ATC10 = 20; 
-//		DTC10 = 50;
-//		TDC3 = 9;
-//		DCF5 = 8;
-//		CL4500 = 500;
-//		CCF10 = 17;
-//		CCD = false;
-//		LS10 = 11;
-//		MIR5 = 9;
+		SW30 = 25; 
+		UPW = 10;
+		ATC10 = 20; 
+		DTC10 = 50;
+		TDC3 = 9;
+		DCF5 = 8;
+		CL4500 = 500;
+		CCF10 = 17;
+		CCD = false;
+		LS10 = 8;
+		MIR5 = 9;
 		
 		switch(currentState.getKey()){
 			case "LP":
@@ -154,9 +158,12 @@ public class SpaceVehicle {
 				break;
 				
             case "DL":
+            	//System.out.println("es");
                 double SR30 = rand.nextInt(50); //Should not exceed 30
                 double TPL10 = rand.nextInt(10); //Should not be less than 10
-
+                
+               // System.out.println(SR30 + " " + TPL10);
+                
                 if(SR30>30){
                     this.currentState = this.changeCurrentState("LP", statesList);
                 } else if(TPL10<10){
@@ -166,6 +173,7 @@ public class SpaceVehicle {
                 break;
 
             case "LO":
+            	System.out.println("es");
                 if(input.equals("SRB"))
                  this.currentState = this.changeCurrentState("PA", statesList);
                  
