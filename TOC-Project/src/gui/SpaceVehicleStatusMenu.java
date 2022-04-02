@@ -2,12 +2,13 @@ package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 
 import domain.SpaceVehicle;
-import domain.State;
-
 import java.awt.Font;
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SpaceVehicleStatusMenu extends JFrame {
 	private JLabel lblSpaceVehicleStatus;
@@ -26,6 +27,12 @@ public class SpaceVehicleStatusMenu extends JFrame {
 	private ArrayList<String> currentState;
 	public ArrayList<String> inputList = new ArrayList<String>();
 	
+	
+	//Timers
+    Timer timer;
+    Timer timer1;
+    Timer timer2;
+    
 	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle, ArrayList<String> currentState, ArrayList<String> inputList) {
 		getContentPane().setLayout(null);
 		//this.spaceVehicle = spaceVehicle;
@@ -35,6 +42,13 @@ public class SpaceVehicleStatusMenu extends JFrame {
 		addComponentsToWindow();
 		setWindowProperties();
 		realTimeStatus();
+		
+		L_counter();
+        T_counter();
+       
+        timer1.start();
+        timer.start();
+
 	}
 
 	private void intializeComponents(SpaceVehicle spaceVehicle) {
@@ -119,26 +133,100 @@ public class SpaceVehicleStatusMenu extends JFrame {
 	}
 	
 	private void realTimeStatus() {
-		for(String currentState: currentState) {
-			try {
-				lblCurrentState.setText("Current State: " + currentState);
-				Thread.sleep(2000);
-			System.out.println(currentState);		
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		
-		for(String inputList: inputList) {
-			try {
-				lblCurrentInput.setText("Current Input: " + inputList);
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			Thread t1 = new Thread(new Runnable() { 
+				@Override 
+				public void run() { 
+					for(String currentState: currentState) {
+						try {
+							lblCurrentState.setText("Current State: " + currentState);
+							Thread.sleep(2000);
+						System.out.println(currentState);		
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						
+						if(currentState.equals("Delay")) {
+							 D_counter();
+						     timer2.start();
+						     try {
+								Thread.sleep(30000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			});
+			t1.start();
 			
-		}
+		
+			Thread t2 = new Thread(new Runnable() { 
+				@Override 
+				public void run() {
+					for(String inputList: inputList) {
+						try {
+							lblCurrentInput.setText("Current Input: " + inputList);
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						
+					}
+				}
+			});
+			t2.start();
 	}
+	
+	public void L_counter() {
+        // Timer timer;
+		 timer = new Timer(1000, new ActionListener() {
+             int L_minutes = 0;
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				L_minutes++;
+
+                lblCounterL.setText("Counter L : "+ L_minutes);
+				
+			}
+
+         });
+     }
+
+     public void T_counter() {
+         // Timer timer;
+         timer1 = new Timer(1000, new ActionListener() {
+             int T_minutes = 50;
+
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 T_minutes--;
+
+                 lblCounterT.setText("Counter T : "+ T_minutes);
+             }
+
+         });
+     }
+     public void D_counter() {
+         // Timer timer;
+         timer2 = new Timer(1000, new ActionListener() {
+             int D_minutes = 30;
+
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 D_minutes--;
+     
+                 lblCounterD.setText("Counter D : "+ D_minutes);
+                 
+                 if(D_minutes == 0) {
+                	 timer2.stop();
+                 }
+             }
+
+         });
+     }
 	
 	public static void main(String [] args) {
 	}

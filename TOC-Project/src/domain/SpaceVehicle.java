@@ -3,7 +3,6 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import gui.SpaceVehicleStatusMenu;
 
 public class SpaceVehicle {
@@ -30,7 +29,6 @@ public class SpaceVehicle {
 	public double MIR5; //Should not exceed 1500
 	@SuppressWarnings("unused")
 	private boolean LS;
-	
 	
 	//Constructors
 	public SpaceVehicle() {
@@ -109,6 +107,7 @@ public class SpaceVehicle {
 				
 				System.out.println(inputList); //Check inputList for correct data
 				String currState;
+				
 				for(String inputList: inputList) {
 					this.changeState(currentState, inputList);
 					currStateList.add(getCurrentState().getValue());
@@ -138,7 +137,7 @@ public class SpaceVehicle {
 		CL4500 = 500;
 		CCF10 = 17;
 		CCD = false;
-		LS10 = 8;
+		LS10 = 1;
 		MIR5 = 9;
 		
 		switch(currentState.getKey()){
