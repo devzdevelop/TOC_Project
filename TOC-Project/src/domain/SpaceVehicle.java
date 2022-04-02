@@ -94,10 +94,7 @@ public class SpaceVehicle {
 				double MIR5 = rand.nextInt(2500); //Should not exceed 1500
 				
 //				System.out.println(SW30+ " " +UPW+ " " +ATC10+ " " +DTC10+ " " +TDC3+ " " +DCF5+ " " +CL4500+ " " +CCF10+ " " +CCD+ " " +LS10+ " " +MIR5+ " ");
-				
-				
-				
-				
+		
 				if (SW30>30 || UPW>15 || ATC10<10 || DTC10<10 || TDC3<3 || DCF5<5 || CL4500>4500 || CCF10<10 || CCD==true) {
 					this.currentState = this.changeCurrentState("AC", statesList);
 				}else if (LS10<10 || MIR5>1500) {
