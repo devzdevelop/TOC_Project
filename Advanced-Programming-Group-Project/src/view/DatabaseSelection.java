@@ -58,11 +58,11 @@ public class DatabaseSelection extends JInternalFrame  {
 		getContentPane().add(selectDBLabel);
 		
 		//dbOptionsCBox 
-		dbOptionsCBox.setBounds(100, 110, 104, 21);
+		dbOptionsCBox.setBounds(109, 110, 104, 21);
 		getContentPane().add(dbOptionsCBox);
 		
 		//goBtn
-		goBtn.setBounds(214, 110, 85, 21);
+		goBtn.setBounds(223, 110, 85, 21);
 		getContentPane().add(goBtn);
 		
 		//action listener
@@ -184,7 +184,7 @@ public class DatabaseSelection extends JInternalFrame  {
 	}
 	
 	public void setWindowsProperties() {
-		this.setSize(321, 325);
+		this.setSize(384, 348);
 		this.setVisible(true);
 	}
 }
