@@ -192,7 +192,6 @@ public class SpaceVehicle {
 		Random rand = new Random();
 		
 		//Test Code. Uncomment and run driver to test without gui. The data is to satisfy the LO state only.
-
 //		SW30 = 25; 
 //		UPW = 10;
 //		ATC10 = 20; 
@@ -204,7 +203,6 @@ public class SpaceVehicle {
 //		CCD = false;
 //		LS10 = 14;
 //		MIR5 = 9;
-
 		
 		switch(currentState.getKey()){
 			case "LP":
