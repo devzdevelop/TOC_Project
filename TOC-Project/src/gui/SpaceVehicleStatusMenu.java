@@ -1,11 +1,15 @@
 package gui;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import javax.swing.border.Border;
 
 import domain.SpaceVehicle;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -37,6 +41,8 @@ public class SpaceVehicleStatusMenu extends JFrame {
     boolean pauseCheck = false;
     
 	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle, ArrayList<String> currentState, ArrayList<String> inputList) {
+		setResizable(false);
+		getContentPane().setBackground(new Color(153, 255, 255));
 		getContentPane().setLayout(null);
 		//this.spaceVehicle = spaceVehicle;
 		this.currentState = currentState;
@@ -55,14 +61,22 @@ public class SpaceVehicleStatusMenu extends JFrame {
 	}
 
 	private void intializeComponents(SpaceVehicle spaceVehicle) {
-		lblSpaceVehicleStatus = new JLabel("Space Vehicle Status");
+		lblSpaceVehicleStatus = new JLabel("    Space Vehicle Status Menu");
+		lblSpaceVehicleStatus.setForeground(new Color(255, 255, 255));
 //		lblCurrentState = new JLabel("Current State: ");
 //		lblCurrentInput = new JLabel("Current Input: ");
 		lblCurrentState = new JLabel("Current State: ");
+		lblCurrentState.setForeground(new Color(255, 255, 255));
 		lblCurrentInput = new JLabel("Current Input: ");
+		lblCurrentInput.setForeground(new Color(255, 255, 255));
 		lblCounterL = new JLabel("Counter L: ");
+		lblCounterL.setForeground(new Color(255, 255, 255));
 		lblCounterT = new JLabel("Counter T: ");
-		lblCounterD = new JLabel("Counter D: 30");
+
+		lblCounterT.setForeground(new Color(255, 255, 255));
+		lblCounterD = new JLabel("Counter D: ");
+		lblCounterD.setForeground(new Color(255, 255, 255));
+
 		lblCurrentStateResults = new JLabel("");
 		lblCurrentInputResults = new JLabel("");
 		lblCounterLResults = new JLabel("");
@@ -72,33 +86,35 @@ public class SpaceVehicleStatusMenu extends JFrame {
 
 	private void addComponentsToWindow() {
 		//lblSpaceVehicleStatus
-		lblSpaceVehicleStatus.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblSpaceVehicleStatus.setBounds(371, 53, 228, 37);
+		Border blackline = BorderFactory.createLineBorder(Color.white);
+		lblSpaceVehicleStatus.setFont(new Font("Nirmala UI", Font.BOLD, 30));
+		lblSpaceVehicleStatus.setBounds(115, 32, 444, 37);
+		lblSpaceVehicleStatus.setBorder(blackline);
 		getContentPane().add(lblSpaceVehicleStatus);
 		
 		//lblCurrentState
-		lblCurrentState.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCurrentState.setBounds(195, 132, 409, 37);
+		lblCurrentState.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCurrentState.setBounds(71, 132, 409, 37);
 		getContentPane().add(lblCurrentState);
 		
 		//lblCurrentInput
-		lblCurrentInput.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCurrentInput.setBounds(195, 179, 341, 37);
+		lblCurrentInput.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCurrentInput.setBounds(71, 179, 341, 37);
 		getContentPane().add(lblCurrentInput);
 		
 		//lblCounterL
-		lblCounterL.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCounterL.setBounds(195, 226, 122, 37);
+		lblCounterL.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCounterL.setBounds(71, 226, 122, 37);
 		getContentPane().add(lblCounterL);
 		
 		//lblCounterT
-		lblCounterT.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCounterT.setBounds(195, 273, 122, 37);
+		lblCounterT.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCounterT.setBounds(71, 273, 122, 37);
 		getContentPane().add(lblCounterT);
 		
 		//lblCounterD
-		lblCounterD.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblCounterD.setBounds(195, 320, 122, 37);
+		lblCounterD.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCounterD.setBounds(71, 320, 122, 37);
 		getContentPane().add(lblCounterD);
 		
 		//lblCurrentStateResults
