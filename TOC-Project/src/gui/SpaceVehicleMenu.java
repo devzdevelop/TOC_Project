@@ -278,7 +278,7 @@ public class SpaceVehicleMenu extends JFrame{
 				textFieldList.add(mir5TextField.getText());
 				
 				System.out.println(textFieldList);
-				//spaceVehicle.TPL10 = Double.parseDouble(tcl10TextField.getText());
+				spaceVehicle.TPL10 = Double.parseDouble(tpc10TextField.getText());
 				spaceVehicle.run();
 				//new SpaceVehicleStatusMenu(spaceVehicle);
 			}
