@@ -3,6 +3,10 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import gui.SpaceVehicleMenu;
 import gui.SpaceVehicleStatusMenu;
 
 public class SpaceVehicle {
@@ -24,11 +28,15 @@ public class SpaceVehicle {
 	public double CL4500; //Should not exceed 4500
 	public double CCF10; //Should not be less than 10
 	public boolean CCD; //Should not be true
+	public double TPL10;
+	
 	//Delay
 	public double LS10; //Should not be less than 10
 	public double MIR5; //Should not exceed 1500
 	@SuppressWarnings("unused")
 	private boolean LS;
+	
+	private int check;
 	
 	//Constructors
 	public SpaceVehicle() {
@@ -87,7 +95,53 @@ public class SpaceVehicle {
 				
 				System.out.println("\nCurrent State: " + this.getCurrentState() + "\n");
 				
-				this.LS = true;
+//				this.LS = true;
+				check = 0;
+				boolean test = true;
+				while (test == true){
+					if (this.currentState.getKey()=="LP") {
+						
+						if (check>0) {
+							SW30 = 25; 
+							UPW = 10;
+							ATC10 = 20; 
+							DTC10 = 50;
+							TDC3 = 9;
+							DCF5 = 8;
+							CL4500 = 500;
+							CCF10 = 17;
+							CCD = false;
+							LS10 = 14;
+							MIR5 = 9;
+							TPL10 = 14;
+							
+							test = false;
+							break;
+							
+						}
+						
+						this.changeState(currentState, null);
+						
+						
+					}else if (this.currentState.getKey()=="AC"){
+//							break;
+							test= false;
+					}else if(this.currentState.getKey()=="DL") {
+						this.changeState(currentState, null);
+						
+					}
+					
+					currStateList.add(getCurrentState().getValue());
+					check++;
+				}
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				//input: LSSRBMECOETOISDSRSSLS
 				//Test Code. Uncomment and run driver to test without gui. Test data is for the accept state only
@@ -109,9 +163,18 @@ public class SpaceVehicle {
 				String currState;
 				
 				for(String inputList: inputList) {
-					this.changeState(currentState, inputList);
-					currStateList.add(getCurrentState().getValue());
+//					if (this.currentState.getKey() == "LP"){
+						this.changeState(currentState, inputList);
+						currStateList.add(getCurrentState().getValue());	
+//					}
+					
+					
 				}
+				
+				
+				
+				
+				
 				//changeState(currentState, "");
 				//this.changeState(currentState, "");
 				
@@ -122,23 +185,26 @@ public class SpaceVehicle {
 				new SpaceVehicleStatusMenu(this, currStateList, inputList);
 				//Test print all states
 //				this.getAllStates();
+
 	}
 
 	public State changeState(State currentState, String input) {
 		Random rand = new Random();
 		
 		//Test Code. Uncomment and run driver to test without gui. The data is to satisfy the LO state only.
-		SW30 = 25; 
-		UPW = 10;
-		ATC10 = 20; 
-		DTC10 = 50;
-		TDC3 = 9;
-		DCF5 = 8;
-		CL4500 = 500;
-		CCF10 = 17;
-		CCD = false;
-		LS10 = 19;
-		MIR5 = 9;
+
+//		SW30 = 25; 
+//		UPW = 10;
+//		ATC10 = 20; 
+//		DTC10 = 50;
+//		TDC3 = 9;
+//		DCF5 = 8;
+//		CL4500 = 500;
+//		CCF10 = 17;
+//		CCD = false;
+//		LS10 = 14;
+//		MIR5 = 9;
+
 		
 		switch(currentState.getKey()){
 			case "LP":
@@ -149,7 +215,7 @@ public class SpaceVehicle {
                 }else if (LS10<10 || MIR5>1500) {
                     this.currentState = this.changeCurrentState("DL", statesList);
 //                    System.out.println("Delay"); //Checked if this is working
-                }else if(SW30<30 && UPW<15 && ATC10>10 && DTC10>10 && TDC3>3 && DCF5>5 && CL4500<4500 && CCF10>10 && CCD==false && input.equalsIgnoreCase("LS")){
+                }else{
                     this.currentState = this.changeCurrentState("LO", statesList);
 //                    System.out.println("Lift Off \n"); //Checked if this is working
                 }
@@ -158,15 +224,18 @@ public class SpaceVehicle {
 				
             case "DL":
             	//System.out.println("es");
-                double SR30 = rand.nextInt(50); //Should not exceed 30
-                double TPL10 = rand.nextInt(10); //Should not be less than 10
+//                double SR30 = rand.nextInt(50); //Should not exceed 30
+//                double TPL10 = rand.nextInt(10); //Should not be less than 10
                 
                // System.out.println(SR30 + " " + TPL10);
                 
-                if(SR30>30){
-                    this.currentState = this.changeCurrentState("LP", statesList);
-                } else if(TPL10<10){
+//                if(SR30>30){
+//                    this.currentState = this.changeCurrentState("LP", statesList);
+//                } else 
+                if(TPL10<10){
                     this.currentState = this.changeCurrentState("AC", statesList);
+                }else {
+                	this.currentState = this.changeCurrentState("LP", statesList);
                 }
                 
                 break;

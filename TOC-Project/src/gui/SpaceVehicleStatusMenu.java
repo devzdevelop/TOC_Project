@@ -3,6 +3,7 @@ package gui;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.border.Border;
 
@@ -37,6 +38,8 @@ public class SpaceVehicleStatusMenu extends JFrame {
     Timer timer1;
     Timer timer2;
     
+    boolean pauseCheck = false;
+    
 	public SpaceVehicleStatusMenu(SpaceVehicle spaceVehicle, ArrayList<String> currentState, ArrayList<String> inputList) {
 		setResizable(false);
 		getContentPane().setBackground(new Color(153, 255, 255));
@@ -69,9 +72,11 @@ public class SpaceVehicleStatusMenu extends JFrame {
 		lblCounterL = new JLabel("Counter L: ");
 		lblCounterL.setForeground(new Color(255, 255, 255));
 		lblCounterT = new JLabel("Counter T: ");
+
 		lblCounterT.setForeground(new Color(255, 255, 255));
 		lblCounterD = new JLabel("Counter D: ");
 		lblCounterD.setForeground(new Color(255, 255, 255));
+
 		lblCurrentStateResults = new JLabel("");
 		lblCurrentInputResults = new JLabel("");
 		lblCounterLResults = new JLabel("");
@@ -163,14 +168,25 @@ public class SpaceVehicleStatusMenu extends JFrame {
 						if(currentState.equals("Delay")) {
 							 D_counter();
 						     timer2.start();
+						     pauseCheck =true;
 						     try {
+						    	
 								Thread.sleep(30000);
+								pauseCheck = false;
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 						}
 					}
+					
+					String last = currentState.get(currentState.size() - 1);
+					if(last == "Splashdown") {
+						JOptionPane.showMessageDialog(null, "This string is Accepted");
+					}else {
+						JOptionPane.showMessageDialog(null, "This string is Rejected");
+					}
+					
 				}
 			});
 			t1.start();
@@ -181,6 +197,9 @@ public class SpaceVehicleStatusMenu extends JFrame {
 				public void run() {
 					for(String inputList: inputList) {
 						try {
+							if (pauseCheck ==true){
+								Thread.sleep(30000);
+							}
 							lblCurrentInput.setText("Current Input: " + inputList);
 							Thread.sleep(2000);
 						} catch (InterruptedException e) {
@@ -217,6 +236,7 @@ public class SpaceVehicleStatusMenu extends JFrame {
              @Override
              public void actionPerformed(ActionEvent e) {
                  T_minutes--;
+                                 
 
                  lblCounterT.setText("Counter T : "+ T_minutes);
              }
