@@ -137,7 +137,7 @@ public class SpaceVehicle {
 		CL4500 = 500;
 		CCF10 = 17;
 		CCD = false;
-		LS10 = 1;
+		LS10 = 19;
 		MIR5 = 9;
 		
 		switch(currentState.getKey()){
